@@ -1,0 +1,28 @@
+{
+  "name": "clickbutton",
+  "version": "0.0.1",
+  "description": "A simple click button UI component",
+  "author": {
+    "name": "Gaetan Renaudeau",
+    "email": "renaudeau.gaetan@gmail.com",
+    "url": "https://github.com/gre"
+  },
+  "keywords": [],
+  "homepage": "https://github.com/gre/clickbutton",
+  "bugs": "https://github.com/gre/clickbutton/issues",
+  "main": "clickbutton.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gre/clickbutton.git"
+  },
+  "dependencies": {
+    "q": "~0.9.x"
+  },
+  "devDependencies": {
+  },
+  "licenses": [
+    {
+      "type": "MIT"
+    }
+  ]
+}
