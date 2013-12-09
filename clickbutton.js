@@ -27,24 +27,29 @@ ClickButton.prototype = {
         $(this.el).off("click", this._onclick);
         this.binded = false;
     },
-    attachTo: function (el) {
+    setEl: function (el) {
         this.el = el;
     },
-    set: function (f) {
+    setF: function (f) {
         this.f = f;
+    },
+    setActive: function (active) {
+        if (active)
+            $(this.el).addClass(this.activeCls);
+        else
+            $(this.el).removeClass(this.activeCls);
+        this.active = active;
     },
     onClick: function (e) {
         var self = this;
         if (!this.active && this.isValidClickEvent(e)) {
             Q.fcall(function () {
-                self.active = true;
-                $(self.el).addClass(self.activeCls);
+                self.setActive(true);
                 return self.f(e);
             })
             .delay(this.debounceRate)
             .fin(function () {
-                $(self.el).removeClass(self.activeCls);
-                self.active = false;
+                self.setActive(false);
             })
             .done();
         }
